@@ -16,20 +16,20 @@ def rate_rhythm(target_time, actual_time):
 # speed variable holds the value of seconds user tests their speed
 while True:
     try:
-        speed = int(input("Enter speed of rhythm: "))
+        speed = int(input("Choose rhythm speed (1, 2 or 3): "))
         # checking if the user input is 1,2 or 3
         if speed == 1 or speed == 2 or speed == 3:
             break
         else:
-            print("Please enter an integer between 1 and 3!")
+            print("Invalid choice. Enter 1, 2 or 3")
     # handles the exception if user enters string
     except ValueError:
-        print("Please enter an integer as count of speed")
+        print("Invalid choice. Enter 1, 2 or 3")
 
 #round variable holds the count of rounds user want to try
 while True:
     try:
-        rounds = int(input("Enter round of rhythm: "))
+        rounds = int(input("Chose number of rounds (5 to 50): "))
         # check if the user input is between 5 and 50
         if 5 <= rounds <= 50:
             break
@@ -81,6 +81,8 @@ print("\nResults:")
 print(f"  Fastest Response: {round(minimumRhythm, 2)} {rate_rhythm(speed,minimumRhythm)}")
 print(f"  average Response: {round(averageRhythm, 2)} {rate_rhythm(speed,averageRhythm)}")
 print(f"  slowest Response: {round(maximumRhythm, 2)} {rate_rhythm(speed,maximumRhythm)} \n")
+
+print("All Results: ")
 
 # display all the response time in table
 print(f"{'Round':<6} {'Response':<10} {'Difference':<15}")
